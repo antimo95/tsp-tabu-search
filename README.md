@@ -11,34 +11,63 @@ This project tackles the classical **Traveling Salesman Problem (TSP)** using **
 
 ---
 
-## 🔧 Algorithms Implemented
+📂 Dataset  
+**Source**: TSPLIB benchmark files  
+**Files used**:  
+- `ch150.tsp` — Coordinates of 150 cities  
+- `ch150.opt.tour` — Known optimal tour  
+- `eil76.tsp` — Smaller instance for OR-Tools 
 
-1. **Tabu Search**  
-   Classic metaheuristic for TSP using 2-opt neighborhood and memory-based move exclusion.
 
-2. **Multi-Start Tabu Search**  
-   Repeated Tabu Search from different random seeds to enhance global exploration and avoid local minima.
-
-3. **Exact Solver with Google OR-Tools**  
-   Solves TSP using **Row Generation** to handle subtour elimination constraints iteratively.
-
----
-
-## 📁 File Structure
-
-- `ch150.tsp`, `ch150.opt.tour`, `eil76.tsp` → Dataset files in TSPLIB format.
-- `RO_TabuSearch_TSP.ipynb` → Main notebook with all implementations.
-- `plot_tour()` → Visualizes the generated routes.
-- `compute_distance_matrix()` → Builds the full distance matrix.
+🛠 Tools & Technologies Used  
+- 🧠 **Tabu Search** (classic and multi-start versions)  
+- 🧩 **Google OR-Tools** (Row Generation solver)  
+- 📊 **matplotlib** — tour visualization  
+- 📐 **NumPy** — distance matrix computation  
+- 🕸 **NetworkX** — graph analysis for subtours  
+- ⚙️ **Google Colab** — development and testing
 
 ---
 
-## 🧮 Features
+📊 Data Processing & Precomputation
 
-- Visual comparison between **Tabu Search** and **Optimal Tour**
-- Gap computation between heuristic and exact solutions
-- Early stopping with counter on non-improving moves
-- Pretty distance matrix printing
-- Fully modular design
+🔍 **Input Handling**:  
+- Parsing `.tsp` and `.tour` files to extract city coordinates and optimal solutions.
+
+📏 **Distance Matrix**:  
+- Computed using Euclidean distance between all city pairs.
+
+🖼 **Visualization**:  
+- Custom plot function for route display with city annotations.
+
+---
 
 
+🚀 Algorithms Implemented
+
+1. ✅ **Tabu Search**:  
+   - Local search with 2-opt neighborhood  
+   - Tabu list with adaptive memory  
+   - Early stopping based on stagnation
+
+2. ✅ **Multi-Start Tabu Search**:  
+   - Repeated Tabu Search from random seeds  
+   - Best solution selected among all runs
+
+3. ✅ **Exact Solver (OR-Tools)**:  
+   - Row Generation to iteratively remove subtours  
+   - Guarantees optimality on smaller instances
+
+---
+
+## 📌 Conclusion
+
+Beyond the algorithms and their performance, this project provides a **practical learning experience** in operations research and algorithm design. Working with real benchmark datasets and implementing both heuristics and exact methods has offered the opportunity to:
+
+- Understand the trade-offs between **efficiency and optimality**
+- Gain hands-on experience with **metaheuristics**
+- Appreciate the complexity of combinatorial problems in real scenarios
+
+This type of problem-solving approach is highly transferable to many domains, including logistics, manufacturing, and bioinformatics, where finding "good enough" solutions quickly is often more valuable than perfection.
+
+---
