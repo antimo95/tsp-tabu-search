@@ -9,15 +9,7 @@
 
 This project tackles the classical **Traveling Salesman Problem (TSP)** using **metaheuristic and exact algorithms**, focusing on performance, accuracy, and gap analysis compared to optimal solutions.
 
----
-
-📂 Dataset  
-**Source**: TSPLIB benchmark files  
-**Files used**:  
-- `ch150.tsp` — Coordinates of 150 cities  
-- `ch150.opt.tour` — Known optimal tour  
-- `eil76.tsp` — Smaller instance for OR-Tools 
-
+--- 
 
 🛠 Tools & Technologies Used  
 - 🧠 **Tabu Search** (classic and multi-start versions)  
